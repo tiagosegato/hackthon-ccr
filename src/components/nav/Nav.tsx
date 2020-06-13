@@ -3,7 +3,7 @@ import './Style.css';
 
 const Nav: React.FC = () => (
   <div className="nav-bar">
-    tabs...
+    Nav...
   </div>
 );
 

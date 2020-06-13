@@ -1,4 +1,8 @@
 .nav-bar{
-    position: relative;
+    position: absolute;
     width: 100%;
+    z-index: 1000;
+    background: red;
+    bottom: 0px;
+    height: 100px;
 }

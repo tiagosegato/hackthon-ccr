@@ -2,7 +2,7 @@ import React, { lazy, useEffect, useState } from "react";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import useSwr from "swr";
 import { Icon } from "leaflet";
-const MenuSuperior = lazy(() => import('./Menu'));
+const MenuSuperior = lazy(() => import('../components/menu/Menu'));
 const Nav = lazy(() => import('../components/nav/Nav'));
 
 export const icon = new Icon({
@@ -23,9 +23,10 @@ const PanelMap: React.FC = () => {
 
     return (
         <>
-            <MenuSuperior />
-
             <Map center={[52.63, -1.125]} zoom={14}>
+
+                <MenuSuperior />
+
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -58,9 +59,8 @@ const PanelMap: React.FC = () => {
                         </div>
                     </Popup>
                 )}
+                <Nav />
             </Map>
-
-            <Nav />
         </>
     )
 };

@@ -13,7 +13,11 @@ const useStyles = makeStyles((theme: any) => ({
     padding: '2px 4px',
     display: 'flex',
     alignItems: 'center',
-    width: '100%',
+    width: '80%',
+    left: '52px',
+    top: '15px',
+    position: 'absolute',
+    zIndex: 1000
   },
   input: {
     marginLeft: theme.spacing(1),
@@ -28,7 +32,7 @@ const useStyles = makeStyles((theme: any) => ({
   },
 }));
 
-const Menu: React.FC = () => {
+const Menu = () => {
 
   const classes = useStyles();
 
