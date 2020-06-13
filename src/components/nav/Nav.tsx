@@ -6,7 +6,7 @@ import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import SpeedIcon from '@material-ui/icons/Speed';
 import { Col } from 'reactstrap';
-import './Style.css';
+import './styles.css';
 
 const useStyles = makeStyles({
   root: {

@@ -1,0 +1,16 @@
+.nav-bar{
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    background: white;
+    bottom: 0px;
+    height: 200px;
+}
+.btn-blue{
+width: 110px !important;
+height: 100px !important;
+background: #56CCF2 !important;
+border-radius: 8px !important;
+color: #ffffff !important;
+margin: 6px !important;
+}
