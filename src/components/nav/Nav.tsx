@@ -51,7 +51,7 @@ export default function SimpleBottomNavigation() {
           />
           <BottomNavigationAction
             className="btn-blue"
-            label="Agendar Consulta"
+            label="Cancelar Consulta"
             icon={<CalendarTodayIcon />}
           />
         </BottomNavigation>
