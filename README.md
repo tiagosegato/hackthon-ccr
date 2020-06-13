@@ -1,5 +1,5 @@
 # Hackathon CCR
 
 Para executar o projeto:
-npm install 
-npm start
+- npm install 
+- npm start
