@@ -1,3 +1,5 @@
+/* eslint-disable import/first */
+
 import React, { lazy, useEffect, useState } from "react";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import useSwr from "swr";
@@ -5,25 +7,20 @@ import { Icon } from "leaflet";
 const MenuSuperior = lazy(() => import('../components/menu/Menu'));
 const Nav = lazy(() => import('../components/nav/Nav'));
 
+import ppd from "../data/ppd.json"; // pontos de parada e descanço
+
 export const icon = new Icon({
     iconUrl: "/skateboarding.svg",
     iconSize: [25, 25]
 });
 
-const fetcher = (args: any) => fetch(args).then(response => response.json());
-
 const PanelMap: React.FC = () => {
 
     const [activePoint, setActivePoint]: any = useState(null);
 
-    const url =
-        "https://data.police.uk/api/crimes-street/all-crime?lat=52.629729&lng=-1.131592&date=2019-10";
-    const { data, error } = useSwr(url, { fetcher });
-    const crimes = data && !error ? data.slice(0, 100) : [];
-
     return (
         <>
-            <Map center={[52.63, -1.125]} zoom={14}>
+            <Map center={[-23, -44.8]} zoom={7}>
 
                 <MenuSuperior />
 
@@ -32,10 +29,10 @@ const PanelMap: React.FC = () => {
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 />
 
-                {crimes.map((p: any) => (
+                {ppd.map((p: any) => (
                     <Marker
-                        key={p.id}
-                        position={[p.location.latitude, p.location.longitude]}
+                        key={p.name}
+                        position={[p.latitude, p.longitude]}
                         onClick={() => {
                             setActivePoint(p);
                         }}
@@ -46,16 +43,16 @@ const PanelMap: React.FC = () => {
                 {activePoint && (
                     <Popup
                         position={[
-                            activePoint.location.latitude,
-                            activePoint.location.longitude
+                            activePoint.latitude,
+                            activePoint.longitude
                         ]}
                         onClose={() => {
                             setActivePoint(null);
                         }}
                     >
                         <div>
-                            <h2>{activePoint.category}</h2>
-                            <p>{activePoint.month}</p>
+                            <h2>{activePoint.name}</h2>
+                            <p>{activePoint.description}</p>
                         </div>
                     </Popup>
                 )}
