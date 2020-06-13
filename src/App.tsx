@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <Suspense fallback={<div>Loading...</div>}>
-        <nav>
+        {/* <nav>
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -17,11 +17,8 @@ function App() {
               <Link to="/panelmap">Map</Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
         <Switch>
-          <Route path="/panelmap">
-            <PanelMap />
-          </Route>
           <Route path="/">
             <Home />
           </Route>
