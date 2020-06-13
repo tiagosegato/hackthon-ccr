@@ -1,14 +1,7 @@
-import React, { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React, { lazy } from 'react';
 import '../App.css';
 const PanelMap = lazy(() => import('./PanelMap'));
-const MenuSuperior = lazy(() => import('./menu'));
 
-const Home: React.FC = () => (
-  <>
-   <MenuSuperior />
-   <PanelMap />
-   </>
-);
+const Home: React.FC = () => <PanelMap />;
 
 export default Home;

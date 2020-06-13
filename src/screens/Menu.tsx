@@ -8,7 +8,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import DirectionsIcon from '@material-ui/icons/Directions';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: any) => ({
   root: {
     padding: '2px 4px',
     display: 'flex',
@@ -28,7 +28,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CustomizedInputBase() {
+const Menu: React.FC = () => {
+
   const classes = useStyles();
 
   return (
@@ -51,3 +52,5 @@ export default function CustomizedInputBase() {
     </Paper>
   );
 }
+
+export default Menu;
