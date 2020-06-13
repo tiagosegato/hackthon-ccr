@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { makeStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
@@ -13,7 +14,7 @@ import ModalHeader from "react-bootstrap/ModalHeader";
 import ModalFooter from "react-bootstrap/ModalFooter";
 import ModalTitle from "react-bootstrap/ModalTitle";
 import "./styles.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 
 const useStyles = makeStyles({
   root: {
@@ -51,7 +52,7 @@ export default function SimpleBottomNavigation() {
         </span>
       </Col>
       <Col
-        style={{ marginBottom: "12px" }}
+        style={{ marginBottom: "20px" }}
         className="back"
         xs="12"
         md="12"
