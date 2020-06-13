@@ -1,14 +1,14 @@
 import React, { lazy, useEffect, useState } from "react";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import useSwr from "swr";
-import { Icon } from "leaflet";
+// import { Icon } from "leaflet";
 const MenuSuperior = lazy(() => import('../components/menu/Menu'));
 const Nav = lazy(() => import('../components/nav/Nav'));
 
-export const icon = new Icon({
-    iconUrl: "/skateboarding.svg",
-    iconSize: [25, 25]
-});
+// export const icon = new Icon({
+//     iconUrl: "/skateboarding.svg",
+//     iconSize: [25, 25]
+// });
 
 const fetcher = (args: any) => fetch(args).then(response => response.json());
 
