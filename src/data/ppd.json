@@ -1,0 +1,99 @@
+[
+  {
+    "latitude":  -22.804023,
+    "longitude": -43.345699,
+    "name": "Serviço de Atendimento ao Usuário-CCR Nova Dutra Rio de Janeiro",
+    "description": "Rodovia Presidente Dutra, Km 166 - Pavuna, Rio de Janeiro - RJ, 25585-050"
+  },
+  {
+    "latitude": -22.667074,
+    "longitude": -43.843150,
+    "name": "SOS Usuário Nova Dutra Pirai",
+    "description": "Rod. Pres. Dutra, KM 277+600 - SN, Piraí - RJ, 27175-000"
+  }
+  ,
+  {
+    "latitude": -22.716229,
+    "longitude": -43.716657,
+    "name": "Praça de Pedágio Seropédica RJ",
+    "description": "Rod. Pres. Dutra, 5 - Boa Esperança, Seropédica - RJ, 23890-000"
+  },
+  {
+    "latitude": -22.668827,
+    "longitude": -43.829071,
+    "name": "CCR NovaDutra - Escritório de Seropédica",
+    "description": "BR-116, 209 - São Miguel, Seropédica - RJ, 26600-000"
+  },
+  {
+    "latitude": -22.667054,
+    "longitude": -43.843145,
+    "name": "SOS Usuário Nova Dutra Pirai",
+    "description": "Rod. Pres. Dutra, KM 277"
+  },
+  {
+    "latitude": -22.589147,
+    "longitude": -44.081804,
+    "name": "CCR Nova Dutra Volta Redonda",
+    "description": "Rod. Pres. Dutra, Volta Redonda"
+  },
+  {
+    "latitude": -22.466604,
+    "longitude": -44.498018,
+    "name": "Concessionária da Rodovia Presidente Dutra",
+    "description": "Rod. Pres. Dutra, 312, Itatiaia - RJ"
+  },
+  {
+    "latitude": -22.560477,
+    "longitude": -44.859965,
+    "name": "SOS Usuário-CCR Nova Dutra Lavrinhas",
+    "description": "Rod. Pres. Dutra, Lavrinhas - SP, 12760-000"
+  },
+  {
+    "latitude": -22.742682,
+    "longitude": -45.093459,
+    "name": "SOS Usuário CCR Nova Dutra Lorena",
+    "description": "Jardim Novo Horizonte, Lorena - SP"
+  },
+  {
+    "latitude": -22.930200,
+    "longitude": -45.360842,
+    "name": "Praça Pedagio CCR Pindamonhagaba CCR Nova Dutra",
+    "description": "Rod. Pres. Dutra, 625, Pindamonhangaba - SP"
+  },
+  {
+    "latitude": -22.980414,
+    "longitude": -45.461921,
+    "name": "SOS Usuário CCR Nova Dutra Pindamonhangaba",
+    "description": "Av. Célio Tadashi Kobayashi km 99,Zona Rural, Pindamonhangaba - SP"
+  },
+  {
+    "latitude": -23.248940,
+    "longitude": -45.934960,
+    "name": "SOS Usuário Nova Dutra São José dos Campos",
+    "description": "Área Polícia Rodoviária Federal - Jardim Por do Sol, São José dos Campos - SP"
+  },
+  {
+    "latitude": -23.338866,
+    "longitude": -46.150118,
+    "name": "Praça de Pedagio Jardim Presidente Dutra CCR Nova Dutra",
+    "description": "BR-116 - Jardim Pres. Dutra, Guararema - SP, 08900-000"
+  },
+  {
+    "latitude": -23.347188,
+    "longitude": -46.165818,
+    "name": "CCR Nova Dutra",
+    "description": "Rodovia Presidente Dutra, BR 116, KM 184,3 - Parque Santa Tereza, Santa Isabel"
+  },
+  {
+    "latitude": -23.352688,
+    "longitude": -46.181019,
+    "name": "CCR NovaDutra - Conc. da Rodovia Presidente Dutra S.A",
+    "description": "Rod. Pres. Dutra, km 184,3 Sentido SP/RJ"
+  },
+  {
+    "latitude": -23.413612,
+    "longitude": -46.360758,
+    "name": "SOS Usuário Nova Dutra Aruja",
+    "description": "Rodovia Presidente Dutra, KM 202"
+  }
+]
