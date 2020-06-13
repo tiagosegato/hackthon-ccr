@@ -1,2 +1,5 @@
-# hackthon-ccr
-Hackathon CCR
+# Hackathon CCR
+
+Para executar o projeto:
+npm install 
+npm start
