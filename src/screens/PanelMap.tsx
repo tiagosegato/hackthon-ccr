@@ -2,8 +2,8 @@
 
 import React, { lazy, useEffect, useState } from "react";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
-import useSwr from "swr";
 import { Icon } from "leaflet";
+import Button from '@material-ui/core/Button';
 const MenuSuperior = lazy(() => import('../components/menu/Menu'));
 const Nav = lazy(() => import('../components/nav/Nav'));
 
@@ -29,33 +29,31 @@ const PanelMap: React.FC = () => {
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 />
 
-                {ppd.map((p: any) => (
+                {ppd.map((p: any, i) => (
                     <Marker
-                        key={p.name}
+                        key={i + 1}
                         position={[p.latitude, p.longitude]}
                         onClick={() => {
                             setActivePoint(p);
                         }}
                     //icon={icon}
-                    />
-                ))}
-
-                {activePoint && (
-                    <Popup
-                        position={[
-                            activePoint.latitude,
-                            activePoint.longitude
-                        ]}
-                        onClose={() => {
-                            setActivePoint(null);
-                        }}
                     >
-                        <div>
-                            <h2>{activePoint.name}</h2>
-                            <p>{activePoint.description}</p>
-                        </div>
-                    </Popup>
-                )}
+                        <Popup
+                            onClose={() => {
+                                setActivePoint(null);
+                            }}
+                        >
+                            <div>
+                                <h2>{p.name}</h2>
+                                <p>{p.description}</p>
+
+                                <div style={{textAlign: 'center'}}>
+                                    <Button style={{padding: 15}} variant="outlined" color="primary">Agendar consulta</Button>
+                                </div>
+                            </div>
+                        </Popup>
+                    </Marker>
+                ))}
                 <Nav />
             </Map>
         </>
