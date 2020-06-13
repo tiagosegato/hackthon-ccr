@@ -36,7 +36,7 @@ export default function SimpleBottomNavigation() {
   };
 
   return (
-    <div className="container-fluid nav-bar">
+    <div className="nav-bar">
       <Col xs="12" md="12" lg="12">
         <ImageAvatars />
       </Col>
