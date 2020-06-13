@@ -24,7 +24,10 @@ export default function SimpleBottomNavigation() {
       <Col xs="12" md="12" lg="12">
         <ImageAvatars />
       </Col>
-      <Col style={{marginTop: '30px'}} className="back" xs="12" md="12" lg="12">
+       <Col style={{marginTop: '10px'}} className="back" xs="12" md="12" lg="12">
+        <span className="text-name"><b>HS785K</b></span>
+      </Col>
+      <Col style={{marginBottom: '12px'}} className="back" xs="12" md="12" lg="12">
         <span className="text-name">BINO DA SILVA</span>
       </Col>
       <Col xs="12" md="12" lg="12">

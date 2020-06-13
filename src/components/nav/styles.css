@@ -4,16 +4,16 @@
     z-index: 1000;
     background: white;
     bottom: 0px;
-    height: 169px;
+    height: 179px;
 }
 .btn-blue{
-width: 210px !important;
-height: 100px !important;
-background: #56CCF2 !important;
-border-radius: 8px !important;
-color: #ffffff !important;
-margin: 6px !important;
-font-size: 12px;
+    width: 210px !important;
+    height: 100px !important;
+    background: #007BBF !important;
+    border-radius: 8px !important;
+    color: #F2F2F2 !important;
+    margin: 6px !important;
+    font-size: 12px;
 }
 
 .text-name{

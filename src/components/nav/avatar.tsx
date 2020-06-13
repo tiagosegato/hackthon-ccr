@@ -24,7 +24,7 @@ export default function ImageAvatars() {
   const classes = useStyles();
 
   return (
-    <div style={{position: 'absolute', top: "-63px", backgroundColor: 'white', borderRadius: '70px'}} className={classes.root}>
+    <div style={{position: 'absolute', top: "-63px", backgroundColor: '#ffffff38', borderRadius: '70px'}} className={classes.root}>
       <Avatar alt="Remy Sharp" src={AvatarImg} className={classes.large} />
     </div>
   );
