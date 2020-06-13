@@ -6,6 +6,7 @@ import { Icon } from "leaflet";
 import Button from '@material-ui/core/Button';
 const MenuSuperior = lazy(() => import('../components/menu/Menu'));
 const Nav = lazy(() => import('../components/nav/Nav'));
+import getLocation from "../helpers/utils";
 
 import ppd from "../data/ppd.json"; // pontos de parada e descanço
 
@@ -16,7 +17,9 @@ export const icon = new Icon({
 
 const PanelMap: React.FC = () => {
 
-    const [activePoint, setActivePoint]: any = useState(null);
+    getLocation().then(position => {
+        console.log('fasd', position)
+    })
 
     return (
         <>
@@ -33,22 +36,15 @@ const PanelMap: React.FC = () => {
                     <Marker
                         key={i + 1}
                         position={[p.latitude, p.longitude]}
-                        onClick={() => {
-                            setActivePoint(p);
-                        }}
                     //icon={icon}
                     >
-                        <Popup
-                            onClose={() => {
-                                setActivePoint(null);
-                            }}
-                        >
+                        <Popup>
                             <div>
                                 <h2>{p.name}</h2>
                                 <p>{p.description}</p>
 
-                                <div style={{textAlign: 'center'}}>
-                                    <Button style={{padding: 15}} variant="outlined" color="primary">Agendar consulta</Button>
+                                <div style={{ textAlign: 'center' }}>
+                                    <Button style={{ padding: 15 }} variant="outlined" color="primary">Agendar consulta</Button>
                                 </div>
                             </div>
                         </Popup>
