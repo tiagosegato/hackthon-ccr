@@ -61,17 +61,18 @@ export default function SimpleBottomNavigation(props: any) {
             onClick={onOearestCabin}
           />
           <BottomNavigationAction
-            className="btn-blue"
-            label="Cabine mais rapida"
-            icon={<SpeedIcon />}
-          />
-          <BottomNavigationAction
             type="button"
             onClick={showModalCancel}
             className="btn-blue"
             label="Cancelar Consulta"
             icon={<CalendarTodayIcon />}
           />
+          <BottomNavigationAction
+            className="btn-blue"
+            label="Cabine mais rapida"
+            icon={<SpeedIcon />}
+          />
+
         </BottomNavigation>
       </Col>
       {/* <button onClick={showModalCancel}>Display Modal</button> */}
