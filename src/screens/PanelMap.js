@@ -44,7 +44,7 @@ const PanelMap = () => {
 
   return (
     <>
-      <Map center={[-23, -44.8]} zoom={7} ref={(map) => setMap(map)}>
+      <Map center={[-23, -44.8]} zoom={7} zoomControl={false} ref={(map) => setMap(map)}>
         <MenuSuperior />
 
         {gettingRouting && <LoaderSmall text="Calculando rota..." />}
@@ -59,6 +59,7 @@ const PanelMap = () => {
         <Marker
           position={[-22.671036, -43.2888897]}
           icon={my_location}
+          markerZoomAnimation={true}
         />
 
         {ppd.map((p, i) => (

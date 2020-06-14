@@ -13,11 +13,11 @@ const useStyles = makeStyles((theme: any) => ({
     padding: '2px 4px',
     display: 'flex',
     alignItems: 'center',
-    width: '80%',
-    left: '52px',
-    top: '15px',
+    width: '96%',
+    top: '0px',
     position: 'absolute',
-    zIndex: 1000
+    zIndex: 1000,
+    margin: '2%',
   },
   input: {
     marginLeft: theme.spacing(1),
