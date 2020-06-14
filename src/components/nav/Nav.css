@@ -37,3 +37,7 @@
     right: 22px;
     top: 17px;
   }
+
+  .MuiBottomNavigationAction-label.Mui-selected {
+    font-size: 13px !important;
+}

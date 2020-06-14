@@ -4,8 +4,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
-import SpeedIcon from "@material-ui/icons/Speed";
+import NearMeOutlinedIcon from '@material-ui/icons/NearMeOutlined';
+import LockOpenOutlinedIcon from '@material-ui/icons/LockOpenOutlined';
 import { Col } from "reactstrap";
 import ImageAvatars from "./avatar";
 import Modal from "react-bootstrap/Modal";
@@ -14,6 +14,7 @@ import "./Nav.css";
 const useStyles = makeStyles({
   root: {
     width: "100%",
+    fontSize: '13px',
   },
 });
 
@@ -57,7 +58,7 @@ export default function SimpleBottomNavigation(props: any) {
           <BottomNavigationAction
             className="btn-blue"
             label="Cabine mais próxima"
-            icon={<LocationOnIcon />}
+            icon={<NearMeOutlinedIcon fontSize={'large'} />}
             onClick={onOearestCabin}
           />
           <BottomNavigationAction
@@ -65,12 +66,12 @@ export default function SimpleBottomNavigation(props: any) {
             onClick={showModalCancel}
             className="btn-blue"
             label="Agendar Consulta"
-            icon={<CalendarTodayIcon />}
+            icon={<CalendarTodayIcon fontSize={'large'} />}
           />
           <BottomNavigationAction
             className="btn-blue"
-            label="Cabine mais rapida"
-            icon={<SpeedIcon />}
+            label="Destravar Cabine"
+            icon={<LockOpenOutlinedIcon fontSize={'large'} />}
           />
 
         </BottomNavigation>
