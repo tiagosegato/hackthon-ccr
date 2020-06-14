@@ -9,8 +9,9 @@ import LockOpenOutlinedIcon from "@material-ui/icons/LockOpenOutlined";
 import { Col } from "reactstrap";
 import ImageAvatars from "./avatar";
 import Modal from "react-bootstrap/Modal";
-import 'react-calendar/dist/Calendar.css';
+import "react-calendar/dist/Calendar.css";
 import Calendar from "react-calendar";
+import Horarios from "./horarios";
 import "./Nav.css";
 
 const useStyles = makeStyles({
@@ -100,7 +101,7 @@ export default function SimpleBottomNavigation(props: any) {
           />
         </BottomNavigation>
       </Col>
-      <Modal show={isOpen} onHide={hideModalCancel}>
+      <Modal style={{maxHeight: "300px"}} show={isOpen} onHide={hideModalCancel}>
         <Modal.Header>
           <Modal.Title>Tem certeza que deseja cancelar?</Modal.Title>
         </Modal.Header>
@@ -127,12 +128,33 @@ export default function SimpleBottomNavigation(props: any) {
             xs="12"
             md="12"
             lg="12"
-            style={{ marginBottom: "20px" }}
+            style={{ marginBottom: "10px" }}
           >
-            <Calendar 
-            calendarType={"ISO 8601"}
-            minDetail={"month"}
-            />
+            <span>CABINE KBN-51</span>
+          </Col>
+                    <Col
+            className="d-flex justify-content-center"
+            xs="12"
+            md="12"
+            lg="12"
+            style={{ marginBottom: "10px" }}
+          >
+            <span>Selecione o melhor dia e horário para realizar sua consulta:</span>
+          </Col>
+          <Col
+            className="d-flex justify-content-center"
+            xs="12"
+            md="12"
+            lg="12"
+          >
+            <Calendar calendarType={"ISO 8601"} minDetail={"month"} />
+          </Col>
+           <Col
+            xs="12"
+            md="12"
+            lg="12"
+          >
+            <Horarios />
           </Col>
         </Modal.Body>
         <Modal.Footer>
