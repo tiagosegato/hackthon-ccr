@@ -1,6 +1,6 @@
 import React, { lazy } from 'react';
 import '../App.css';
-const PanelMap = lazy(() => import('./PanelMap.js'));
+import PanelMap from './PanelMap.js';
 
 const Home: React.FC = () => <PanelMap />;
 

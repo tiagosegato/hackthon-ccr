@@ -6,7 +6,7 @@ const ScheduleModal = (props: any) => {
   const { show, onHide }: any = props;
 
   return (
-    <Modal show={show} onHide={onHide}>
+    <Modal show={show} onHide={onHide} className="align-items-center">
     <Modal.Header>
       <Modal.Title>Horários disponiveis:</Modal.Title>
     </Modal.Header>

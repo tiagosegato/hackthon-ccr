@@ -4,11 +4,11 @@ import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import { Col } from "reactstrap";
 import { Icon } from "leaflet";
 import Button from "@material-ui/core/Button";
-const MenuSuperior = lazy(() => import("../components/menu/Menu"));
-const Nav = lazy(() => import("../components/nav/Nav"));
-const Routing = lazy(() => import("../components/map/Routing"));
-const InfoRoute = lazy(() => import("../components/map/InfoRoute"));
-const ScheduleModal = lazy(() => import("../components/modal/ScheduleModal"));
+import MenuSuperior from "../components/menu/Menu";
+import Nav from "../components/nav/Nav";
+import Routing from "../components/map/Routing";
+import InfoRoute from "../components/map/InfoRoute";
+import ScheduleModal from "../components/modal/ScheduleModal";
 import LoaderSmall from "../components/loader/LoaderSmall";
 import "./../components/map/Map.css";
 
@@ -62,7 +62,7 @@ const PanelMap = () => {
     setFrom(myLocation);
   };
 
-  const onRefMap = (map) => {if(map) setMap(map.leafletElement)}
+  const onRefMap = (map) => { if (map) setMap(map.leafletElement) }
 
   return (
     <>
@@ -84,11 +84,16 @@ const PanelMap = () => {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
 
+        {/* minha localização */}
         <Marker
           position={[-22.671036, -43.2888897]}
           icon={my_location}
           markerZoomAnimation={true}
-        />
+        >
+          <Popup>
+            <b><center>Minha localização</center></b>
+          </Popup>
+        </Marker>
 
         {ppd.map((p, i) => (
           <Marker key={i + 1} position={[p.latitude, p.longitude]}>
@@ -102,7 +107,7 @@ const PanelMap = () => {
                 <Col style={{ textAlign: "center", marginBottom: "15px" }} xs="12" md="12" lg="12">
                   <span className="titleMaps" >{p.description}</span>
                 </Col>
-                <Col  xs="12" md="12" lg="12">
+                <Col xs="12" md="12" lg="12">
                   <div style={{ textAlign: "center" }}>
                     <Button
                       style={styles.btnPupupAgd}

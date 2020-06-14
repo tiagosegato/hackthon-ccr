@@ -13,6 +13,7 @@ import "react-calendar/dist/Calendar.css";
 import Calendar from "react-calendar";
 import Horarios from "./horarios";
 import Cabines from "./cabine";
+import AlertModal from "../modal/AlertModal";
 import "./Nav.css";
 
 const useStyles = makeStyles({
@@ -30,6 +31,7 @@ export default function SimpleBottomNavigation(props: any) {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenAgenda, setIsOpenAgenda] = useState(false);
   const [isOpenDesbloqueio, setIsOpenDesbloqueio] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
 
   const showModalAgenda = () => {
     setIsOpenAgenda(true);
@@ -54,6 +56,15 @@ export default function SimpleBottomNavigation(props: any) {
   const hideModalCancel = () => {
     setIsOpen(false);
   };
+
+  const handleUnlockCabin = () => {
+    setIsOpenDesbloqueio(false);
+    setShowAlert(true);
+  }
+
+  const onHideAlertModal = () => {
+    setShowAlert(false);
+  }
 
   return (
     <div className="nav-bar">
@@ -112,6 +123,15 @@ export default function SimpleBottomNavigation(props: any) {
           />
         </BottomNavigation>
       </Col>
+
+
+      <AlertModal
+        show={showAlert}
+        title={"Agenda de consulta"}
+        text={"Agendado com sucesso!"}
+        onHide={onHideAlertModal}
+      />
+
       <Modal
         style={{ maxHeight: "300px" }}
         show={isOpen}
@@ -202,7 +222,7 @@ export default function SimpleBottomNavigation(props: any) {
           <button className="btn btn-success" onClick={hideModalDesbloqueio}>
             IR PARA
           </button>
-          <button className="btn btn-primary">DESTRAVAR</button>
+          <button className="btn btn-primary" onClick={handleUnlockCabin}>DESTRAVAR</button>
         </Modal.Footer>
       </Modal>
     </div>
