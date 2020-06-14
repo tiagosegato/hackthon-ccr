@@ -34,7 +34,7 @@ class Routing extends MapLayer {
         return marker;
       },
       show: false,
-    }).addTo(map.leafletElement);
+    }).addTo(map);
 
     routeControl.on('routesfound', (e: any) => {
       const { routes } = e;

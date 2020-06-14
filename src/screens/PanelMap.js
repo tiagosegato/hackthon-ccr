@@ -1,5 +1,5 @@
 /* eslint-disable import/first */
-import React, { lazy, useState } from "react";
+import React, { lazy, useState, useEffect } from "react";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import { Col } from "reactstrap";
 import { Icon } from "leaflet";
@@ -23,11 +23,35 @@ export const my_location = new Icon({
 
 const PanelMap = () => {
   const [map, setMap] = useState(null);
+  const [myLocation, setMyLocation] = useState([-22.671036, -43.2888897]);
   const [from, setFrom] = useState(null);
   const [to /*, setTo*/] = useState([-22.716229, -43.716657]);
   const [infoRounte, setInfoRounte] = useState(null);
   const [isOpenAgenda, setIsOpenAgenda] = useState(false);
   const [gettingRouting, setGettingRouting] = useState(false);
+
+  useEffect(() => {
+    if (map) {
+      // zoom para um local
+      map.flyTo(myLocation, 8, {
+        animate: true,
+        duration: 1.5
+      });
+
+      // pega minha localização pelo "leaflet"
+      // map.locate({ setView: true, maxZoom: 16 });
+      // map.on('locationfound', e => {
+      //   setMyLocation([e.latitude, e.longitude])
+      // });
+    }
+  }, [map]);
+
+  // pega minha localização pelo "navigator.geolocation"
+  // useEffect(() => {
+  //   getLocation().then(position => {
+  //     setMyLocation([position.coords.latitude, position.coords.longitude]);
+  //   });
+  // }, [myLocation]);
 
   const showModalAgenda = () => {
     setIsOpenAgenda(true);
@@ -38,20 +62,20 @@ const PanelMap = () => {
   };
 
   const onOearestCabin = () => {
-    setFrom([-22.671036, -43.2888897]);
-    // getLocation().then(position => {
-    //   setFrom([position.coords.latitude, position.coords.longitude]);
-    // });
+    setFrom(myLocation);
   };
+
+  const onRefMap = (map) => {if(map) setMap(map.leafletElement)}
 
   return (
     <>
       <Map
         center={[-23, -44.8]}
-        zoom={7}
+        zoom={3}
         zoomControl={false}
-        ref={(map) => setMap(map)}
+        ref={onRefMap}
       >
+
         <MenuSuperior />
 
         {gettingRouting && <LoaderSmall text="Calculando rota..." />}
