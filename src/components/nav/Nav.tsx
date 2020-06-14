@@ -9,6 +9,8 @@ import LockOpenOutlinedIcon from "@material-ui/icons/LockOpenOutlined";
 import { Col } from "reactstrap";
 import ImageAvatars from "./avatar";
 import Modal from "react-bootstrap/Modal";
+import 'react-calendar/dist/Calendar.css';
+import Calendar from "react-calendar";
 import "./Nav.css";
 
 const useStyles = makeStyles({
@@ -120,7 +122,18 @@ export default function SimpleBottomNavigation(props: any) {
           <Modal.Title>Agendamento de Consulta:</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          
+          <Col
+            className="d-flex justify-content-center"
+            xs="12"
+            md="12"
+            lg="12"
+            style={{ marginBottom: "20px" }}
+          >
+            <Calendar 
+            calendarType={"ISO 8601"}
+            minDetail={"month"}
+            />
+          </Col>
         </Modal.Body>
         <Modal.Footer>
           <button className="btn btn-danger" onClick={hideModalAgenda}>
