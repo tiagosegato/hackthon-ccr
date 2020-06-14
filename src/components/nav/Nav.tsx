@@ -64,7 +64,7 @@ export default function SimpleBottomNavigation(props: any) {
             type="button"
             onClick={showModalCancel}
             className="btn-blue"
-            label="Cancelar Consulta"
+            label="Agendar Consulta"
             icon={<CalendarTodayIcon />}
           />
           <BottomNavigationAction
