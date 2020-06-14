@@ -36,3 +36,7 @@
     right: 22px;
     top: 17px;
   }
+
+  .modal-content {
+    border-radius: 36px !important;
+}

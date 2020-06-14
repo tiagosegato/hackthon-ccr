@@ -12,6 +12,7 @@ import Modal from "react-bootstrap/Modal";
 import "react-calendar/dist/Calendar.css";
 import Calendar from "react-calendar";
 import Horarios from "./horarios";
+import Cabines from "./cabine";
 import "./Nav.css";
 
 const useStyles = makeStyles({
@@ -38,14 +39,13 @@ export default function SimpleBottomNavigation(props: any) {
     setIsOpenAgenda(false);
   };
 
-    const showModalDesbloqueio = () => {
+  const showModalDesbloqueio = () => {
     setIsOpenDesbloqueio(true);
   };
 
   const hideModalDesbloqueio = () => {
     setIsOpenDesbloqueio(false);
   };
-
 
   const showModalCancel = () => {
     setIsOpen(true);
@@ -112,7 +112,11 @@ export default function SimpleBottomNavigation(props: any) {
           />
         </BottomNavigation>
       </Col>
-      <Modal style={{maxHeight: "300px"}} show={isOpen} onHide={hideModalCancel}>
+      <Modal
+        style={{ maxHeight: "300px" }}
+        show={isOpen}
+        onHide={hideModalCancel}
+      >
         <Modal.Header>
           <Modal.Title>Tem certeza que deseja cancelar?</Modal.Title>
         </Modal.Header>
@@ -143,14 +147,16 @@ export default function SimpleBottomNavigation(props: any) {
           >
             <span>CABINE KBN-51</span>
           </Col>
-                    <Col
+          <Col
             className="d-flex justify-content-center"
             xs="12"
             md="12"
             lg="12"
             style={{ marginBottom: "10px" }}
           >
-            <span>Selecione o melhor dia e horário para realizar sua consulta:</span>
+            <span>
+              Selecione o melhor dia e horário para realizar sua consulta:
+            </span>
           </Col>
           <Col
             className="d-flex justify-content-center"
@@ -160,37 +166,43 @@ export default function SimpleBottomNavigation(props: any) {
           >
             <Calendar calendarType={"ISO 8601"} minDetail={"month"} />
           </Col>
-           <Col
-            xs="12"
-            md="12"
-            lg="12"
-          >
+          <Col xs="12" md="12" lg="12">
             <Horarios />
           </Col>
         </Modal.Body>
         <Modal.Footer>
-        
           <button className="btn btn-primary">Agendar</button>
           <button className="btn btn-danger" onClick={hideModalAgenda}>
             Cancelar
           </button>
         </Modal.Footer>
       </Modal>
-      <Modal style={{maxHeight: "400px"}} show={isOpenDesbloqueio} onHide={hideModalDesbloqueio}>
+      <Modal
+        show={isOpenDesbloqueio}
+        onHide={hideModalDesbloqueio}
+      >
         <Modal.Header>
-          <Modal.Title>Tem certeza que deseja cancelar?</Modal.Title>
+          <Modal.Title>DESTRAVAR CABINE</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          Algumas doenças são silenciosas e não possuem sintomas até já estarem
-          completamente instaladas e afetando sua saúde. Por isso é muito
-          importante consultar um médico e fazer alguns exames com
-          periodicidade, mesmo não apresentando nada fora do normal.
+          <Col xs="12" md="12" lg="12">
+            <p>Selecione qual a cabine que deseja destravar!</p>
+
+            <p>
+              Caso ainda não tenha chegado na sua cabine clique em IR PARA e
+              localize uma nova cabine.
+            </p>
+          </Col>
+
+          <Col xs="12" md="12" lg="12">
+            <Cabines />
+          </Col>
         </Modal.Body>
         <Modal.Footer>
-          <button className="btn btn-secondary" onClick={hideModalDesbloqueio}>
-            Fechar
+          <button className="btn btn-success" onClick={hideModalDesbloqueio}>
+            IR PARA
           </button>
-          <button className="btn btn-danger">Cancelar</button>
+          <button className="btn btn-primary">DESTRAVAR</button>
         </Modal.Footer>
       </Modal>
     </div>
