@@ -21,7 +21,7 @@ export default function TimePickers() {
     <form className={classes.container} noValidate>
       <TextField
         id="time"
-        label="Próximo Horário Disponivel"
+        label="1 vaga disponivel"
         type="time"
         disabled={true}
         defaultValue="18:30"
