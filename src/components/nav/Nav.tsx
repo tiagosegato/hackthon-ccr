@@ -28,6 +28,7 @@ export default function SimpleBottomNavigation(props: any) {
   const [agenda, setAgenda] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenAgenda, setIsOpenAgenda] = useState(false);
+  const [isOpenDesbloqueio, setIsOpenDesbloqueio] = useState(false);
 
   const showModalAgenda = () => {
     setIsOpenAgenda(true);
@@ -36,6 +37,15 @@ export default function SimpleBottomNavigation(props: any) {
   const hideModalAgenda = () => {
     setIsOpenAgenda(false);
   };
+
+    const showModalDesbloqueio = () => {
+    setIsOpenDesbloqueio(true);
+  };
+
+  const hideModalDesbloqueio = () => {
+    setIsOpenDesbloqueio(false);
+  };
+
 
   const showModalCancel = () => {
     setIsOpen(true);
@@ -95,6 +105,7 @@ export default function SimpleBottomNavigation(props: any) {
             />
           ) : null}
           <BottomNavigationAction
+            onClick={showModalDesbloqueio}
             className="btn-blue"
             label="Destravar Cabine"
             icon={<LockOpenOutlinedIcon fontSize={"large"} />}
@@ -158,10 +169,28 @@ export default function SimpleBottomNavigation(props: any) {
           </Col>
         </Modal.Body>
         <Modal.Footer>
+        
+          <button className="btn btn-primary">Agendar</button>
           <button className="btn btn-danger" onClick={hideModalAgenda}>
             Cancelar
           </button>
-          <button className="btn btn-success">Confirmar Consulta</button>
+        </Modal.Footer>
+      </Modal>
+      <Modal style={{maxHeight: "400px"}} show={isOpenDesbloqueio} onHide={hideModalDesbloqueio}>
+        <Modal.Header>
+          <Modal.Title>Tem certeza que deseja cancelar?</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Algumas doenças são silenciosas e não possuem sintomas até já estarem
+          completamente instaladas e afetando sua saúde. Por isso é muito
+          importante consultar um médico e fazer alguns exames com
+          periodicidade, mesmo não apresentando nada fora do normal.
+        </Modal.Body>
+        <Modal.Footer>
+          <button className="btn btn-secondary" onClick={hideModalDesbloqueio}>
+            Fechar
+          </button>
+          <button className="btn btn-danger">Cancelar</button>
         </Modal.Footer>
       </Modal>
     </div>
