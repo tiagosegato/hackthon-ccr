@@ -33,10 +33,7 @@ const PanelMap = () => {
   useEffect(() => {
     if (map) {
       // zoom para um local
-      map.flyTo(myLocation, 8, {
-        animate: true,
-        duration: 1.5
-      });
+      map.flyTo(myLocation, 9);
 
       // pega minha localização pelo "leaflet"
       // map.locate({ setView: true, maxZoom: 16 });
