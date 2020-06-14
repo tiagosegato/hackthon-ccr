@@ -16,3 +16,24 @@
     margin: 6px !important;
     margin-top: 10px;
 }
+
+.text-name{
+    width: 166px;
+    height: 20px;
+    right: 21px;
+    top: 663px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 136%;
+    text-align: right;
+    color: #3E4958;
+    margin: 10px;
+}
+
+.back {
+    text-align: right;
+    right: 22px;
+    top: 17px;
+  }

@@ -38,7 +38,7 @@ const PanelMap: React.FC = () => {
   return (
     <>
       <Map center={[-23, -44.8]} zoom={7}>
-            <Row>
+            {/* <Row>
         <Col
           className="d-flex justify-content-center"
           xs="12"
@@ -48,7 +48,7 @@ const PanelMap: React.FC = () => {
         >
           <span style={{ fontSize: "14px" }}>VIAGEM</span>
         </Col>
-      </Row>
+      </Row> */}
         <MenuSuperior />
 
         <TileLayer
