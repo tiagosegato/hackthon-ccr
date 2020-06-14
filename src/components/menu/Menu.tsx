@@ -45,7 +45,7 @@ const Menu = () => {
           xs="12"
           md="12"
           lg="12"
-          style={{ marginBottom: "20px", zIndex: 9999 }}
+          style={{ marginBottom: "20px", zIndex: 400 }}
         >
           <span className="text-viagem">
             <b>VIAGEM</b>

@@ -29,9 +29,9 @@ export default function ErrorRadios() {
     <form>
       <FormControl component="fieldset" error={error} className={classes.formControl}>
         <RadioGroup aria-label="quiz" name="quiz" value={value} onChange={handleRadioChange}>
-          <div className="horario"><FormControlLabel value="best" control={<Radio />} label="Quarta-Feira  14:30" /></div>
-          <div className="horario"><FormControlLabel value="worst" control={<Radio />} label="Quarta-Feira 15:00" /></div>
-          <div className="horario"><FormControlLabel value="worst" control={<Radio />} label="Quarta-Feira 17:00" /></div>
+          <div className="horario"><FormControlLabel value="Quarta-Feira 14:30" control={<Radio />} label="Quarta-Feira  14:30" /></div>
+          <div className="horario"><FormControlLabel value="Quarta-Feira 15:00" control={<Radio />} label="Quarta-Feira 15:00" /></div>
+          <div className="horario"><FormControlLabel value="Quarta-Feira 17:00" control={<Radio />} label="Quarta-Feira 17:00" /></div>
         </RadioGroup>
       </FormControl>
     </form>
