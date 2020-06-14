@@ -12,9 +12,9 @@ const InfoRoute = (props: any) => {
             <div className="content">
                 <strong>Distância: </strong><span>{totalDistance} km </span>
                 <strong>Tempo: </strong>
-                {totalTime.day>0 && <span>{totalTime.day} dia(s)</span>}
-                {totalTime.hour>0 && <span>{totalTime.hour} horas(s)</span>}
-                {totalTime.minute>0 && <span>{totalTime.minute} minuto(s)</span>}
+                {totalTime.day>0 && <span>{totalTime.day} dia(s) </span>}
+                {totalTime.hour>0 && <span>{totalTime.hour} horas(s) </span>}
+                {totalTime.minute>0 && <span>{totalTime.minute} minuto(s) </span>}
             </div>
         </div>
     )

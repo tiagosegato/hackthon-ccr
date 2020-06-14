@@ -38,6 +38,6 @@
     top: 17px;
   }
 
-  .MuiBottomNavigationAction-label.Mui-selected {
+.MuiBottomNavigationAction-label.Mui-selected {
     font-size: 13px !important;
 }

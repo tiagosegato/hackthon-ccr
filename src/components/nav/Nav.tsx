@@ -56,7 +56,6 @@ export default function SimpleBottomNavigation(props: any) {
       >
         <span className="text-name">BINO DA SILVA</span>
       </Col>
-      {console.log('agenda', agenda)}
       <Col xs="12" md="12" lg="12">
         <BottomNavigation
           value={value}
