@@ -27,14 +27,14 @@ const PanelMap = () => {
   const [from, setFrom] = useState(null);
   const [to /*, setTo*/] = useState([-22.716229, -43.716657]);
   const [infoRounte, setInfoRounte] = useState(null);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenAgenda, setIsOpenAgenda] = useState(false);
 
-  const showModalCancel = () => {
-    setIsOpen(true);
+  const showModalAgenda = () => {
+    setIsOpenAgenda(true);
   };
 
-  const hideModalCancel = () => {
-    setIsOpen(false);
+  const hideModalAgenda = () => {
+    setIsOpenAgenda(false);
   };
 
   // getLocation().then(position => {
@@ -73,28 +73,28 @@ const PanelMap = () => {
                     style={styles.btnPupupAgd}
                     variant="outlined"
                     color="primary"
-                    onClick={showModalCancel}
+                    onClick={showModalAgenda}
                   >
                     Agendar consulta
                   </Button>
 
-                  <Modal show={isOpen} onHide={hideModalCancel}>
+                  <Modal show={isOpenAgenda} onHide={hideModalAgenda}>
                     <Modal.Header>
-                      <Modal.Title>
-                        Horários disponiveis:
-                      </Modal.Title>
+                      <Modal.Title>Horários disponiveis:</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                 <TimePickers />
+                      <TimePickers />
                     </Modal.Body>
                     <Modal.Footer>
                       <button
                         className="btn btn-danger"
-                        onClick={hideModalCancel}
+                        onClick={hideModalAgenda}
                       >
                         Cancelar
                       </button>
-                      <button className="btn btn-success">Confirmar Consulta</button>
+                      <button className="btn btn-success">
+                        Confirmar Consulta
+                      </button>
                     </Modal.Footer>
                   </Modal>
                 </div>

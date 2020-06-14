@@ -4,8 +4,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
-import NearMeOutlinedIcon from '@material-ui/icons/NearMeOutlined';
-import LockOpenOutlinedIcon from '@material-ui/icons/LockOpenOutlined';
+import NearMeOutlinedIcon from "@material-ui/icons/NearMeOutlined";
+import LockOpenOutlinedIcon from "@material-ui/icons/LockOpenOutlined";
 import { Col } from "reactstrap";
 import ImageAvatars from "./avatar";
 import Modal from "react-bootstrap/Modal";
@@ -14,7 +14,7 @@ import "./Nav.css";
 const useStyles = makeStyles({
   root: {
     width: "100%",
-    fontSize: '13px',
+    fontSize: "13px",
   },
 });
 
@@ -22,8 +22,17 @@ export default function SimpleBottomNavigation(props: any) {
   const { onOearestCabin } = props;
   const classes = useStyles();
   const [value, setValue] = useState(0);
-  const [agenda, setAgenda] = useState('');
+  const [agenda, setAgenda] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenAgenda, setIsOpenAgenda] = useState(false);
+
+  const showModalAgenda = () => {
+    setIsOpenAgenda(true);
+  };
+
+  const hideModalAgenda = () => {
+    setIsOpenAgenda(false);
+  };
 
   const showModalCancel = () => {
     setIsOpen(true);
@@ -43,10 +52,11 @@ export default function SimpleBottomNavigation(props: any) {
         xs="12"
         md="12"
         lg="12"
-        style={{marginBottom: '20px'}}
+        style={{ marginBottom: "20px" }}
       >
         <span className="text-name">BINO DA SILVA</span>
       </Col>
+      {console.log('agenda', agenda)}
       <Col xs="12" md="12" lg="12">
         <BottomNavigation
           value={value}
@@ -59,34 +69,36 @@ export default function SimpleBottomNavigation(props: any) {
           <BottomNavigationAction
             className="btn-blue"
             label="Cabine mais próxima"
-            icon={<NearMeOutlinedIcon fontSize={'large'} />}
+            icon={<NearMeOutlinedIcon fontSize={"large"} />}
             onClick={onOearestCabin}
           />
-        {!agenda ? (
-          <BottomNavigationAction
-            type="button"
-            onClick={showModalCancel}
-            className="btn-blue"
-            label="Agendar Consulta"
-            icon={<CalendarTodayIcon fontSize={'large'} />}
-          />):null}
+          {!agenda ? (
+            <BottomNavigationAction
+              type="button"
+              onClick={showModalAgenda}
+              className="btn-blue"
+              label="Agendar Consulta"
+              value={agenda}
+              icon={<CalendarTodayIcon fontSize={"large"} />}
+            />
+          ) : null}
           {agenda ? (
-          <BottomNavigationAction
-            type="button"
-            onClick={showModalCancel}
-            className="btn-blue"
-            label="Cancelar Consulta"
-            icon={<CalendarTodayIcon fontSize={'large'} />}
-          />):null}
+            <BottomNavigationAction
+              type="button"
+              onClick={showModalCancel}
+              className="btn-blue"
+              value={agenda}
+              label="Cancelar Consulta"
+              icon={<CalendarTodayIcon fontSize={"large"} />}
+            />
+          ) : null}
           <BottomNavigationAction
             className="btn-blue"
             label="Destravar Cabine"
-            icon={<LockOpenOutlinedIcon fontSize={'large'} />}
+            icon={<LockOpenOutlinedIcon fontSize={"large"} />}
           />
-
         </BottomNavigation>
       </Col>
-      {/* <button onClick={showModalCancel}>Display Modal</button> */}
       <Modal show={isOpen} onHide={hideModalCancel}>
         <Modal.Header>
           <Modal.Title>Tem certeza que deseja cancelar?</Modal.Title>
@@ -102,6 +114,20 @@ export default function SimpleBottomNavigation(props: any) {
             Fechar
           </button>
           <button className="btn btn-danger">Cancelar</button>
+        </Modal.Footer>
+      </Modal>
+      <Modal show={isOpenAgenda} onHide={hideModalAgenda}>
+        <Modal.Header>
+          <Modal.Title>Agendamento de Consulta:</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          
+        </Modal.Body>
+        <Modal.Footer>
+          <button className="btn btn-danger" onClick={hideModalAgenda}>
+            Cancelar
+          </button>
+          <button className="btn btn-success">Confirmar Consulta</button>
         </Modal.Footer>
       </Modal>
     </div>
