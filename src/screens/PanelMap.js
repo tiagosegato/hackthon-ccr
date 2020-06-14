@@ -1,6 +1,7 @@
 /* eslint-disable import/first */
 import React, { lazy, useState, useEffect } from "react";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
+import { Col } from "reactstrap";
 import { Icon } from "leaflet";
 import Button from "@material-ui/core/Button";
 const MenuSuperior = lazy(() => import("../components/menu/Menu"));
@@ -9,6 +10,7 @@ const Routing = lazy(() => import("../components/map/Routing"));
 const InfoRoute = lazy(() => import("../components/map/InfoRoute"));
 const ScheduleModal = lazy(() => import("../components/modal/ScheduleModal"));
 import LoaderSmall from "../components/loader/LoaderSmall";
+import "./../components/map/Map.css";
 
 //import { getLocation } from "../helpers/utils";
 
@@ -67,7 +69,13 @@ const PanelMap = () => {
 
   return (
     <>
-      <Map center={[-23, -44.8]} zoom={3} fadeAnimation={true} zoomAnimation={true} zoomControl={false} ref={onRefMap}>
+      <Map
+        center={[-23, -44.8]}
+        zoom={3}
+        zoomControl={false}
+        ref={onRefMap}
+      >
+
         <MenuSuperior />
 
         {gettingRouting && <LoaderSmall text="Calculando rota..." />}
@@ -86,34 +94,35 @@ const PanelMap = () => {
         />
 
         {ppd.map((p, i) => (
-          <Marker
-            key={i + 1}
-            position={[p.latitude, p.longitude]}
-          >
+          <Marker key={i + 1} position={[p.latitude, p.longitude]}>
             <Popup>
               <div>
-                <h2>{p.name}</h2>
-                <p>{p.description}</p>
-
-                <div style={{ textAlign: "center" }}>
-                  <Button
-                    style={styles.btnPupupAgd}
-                    variant="outlined"
-                    color="primary"
-                    onClick={showModalAgenda}
-                  >
-                    Agendar consulta
-                  </Button>
-                </div>
+                <Col style={{ marginBottom: "8px" }} xs="12" md="12" lg="12">
+                  <span style={{ textAlign: "center" }} className="titleMaps">
+                    <b><center>{p.name}</center></b>
+                  </span>
+                </Col>
+                <Col style={{ textAlign: "center", marginBottom: "15px" }} xs="12" md="12" lg="12">
+                  <span className="titleMaps" >{p.description}</span>
+                </Col>
+                <Col  xs="12" md="12" lg="12">
+                  <div style={{ textAlign: "center" }}>
+                    <Button
+                      style={styles.btnPupupAgd}
+                      variant="outlined"
+                      color="primary"
+                      onClick={showModalAgenda}
+                    >
+                      Agendar consulta
+                    </Button>
+                  </div>
+                </Col>
               </div>
             </Popup>
           </Marker>
         ))}
 
-        <ScheduleModal
-          show={isOpenAgenda}
-          onHide={hideModalAgenda}
-        />
+        <ScheduleModal show={isOpenAgenda} onHide={hideModalAgenda} />
 
         {map && from && (
           <Routing
@@ -133,7 +142,7 @@ const PanelMap = () => {
 
 const styles = {
   btnPupupAgd: {
-    padding: 15,
+    padding: 6,
     color: "#4ba4be",
     border: "1px solid #4ba4be",
   },

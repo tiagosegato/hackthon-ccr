@@ -13,3 +13,12 @@
     border-radius: 5px;
     font-size: 13px
 }
+
+.titleMaps{
+    font-size: 15px;
+}
+
+.leaflet-popup-content p {
+  margin: none;
+  font-size: 18px !important;
+}

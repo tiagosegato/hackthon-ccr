@@ -4,7 +4,7 @@
     z-index: 1000;
     background: #ffffff;
     bottom: 0px;
-    height: 215px;
+    height: 165px;
 }
 
 .btn-blue{
@@ -45,4 +45,8 @@
 .horario{
     border-bottom: solid;
     border-width: 0.1px;
+}
+
+.modal-content {
+    border-radius: 36px !important;
 }
