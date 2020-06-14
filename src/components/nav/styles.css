@@ -4,13 +4,35 @@
     z-index: 1000;
     background: white;
     bottom: 0px;
-    height: 200px;
+    height: 179px;
 }
 .btn-blue{
-width: 110px !important;
-height: 100px !important;
-background: #56CCF2 !important;
-border-radius: 8px !important;
-color: #ffffff !important;
-margin: 6px !important;
+    width: 210px !important;
+    height: 100px !important;
+    background: #007BBF !important;
+    border-radius: 8px !important;
+    color: #F2F2F2 !important;
+    margin: 6px !important;
+    font-size: 12px;
 }
+
+.text-name{
+    width: 166px;
+    height: 20px;
+    right: 21px;
+    top: 663px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 136%;
+    text-align: right;
+    color: #3E4958;
+    margin: 10px;
+}
+
+.back {
+    text-align: right;
+    right: 22px;
+    top: 17px;
+  }

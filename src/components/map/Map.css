@@ -1,0 +1,15 @@
+.infosRoute{
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    z-index: 1000;
+    top: 69px;
+}
+
+.infosRoute .content{
+    background: #ffffff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 13px
+}

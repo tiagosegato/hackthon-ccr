@@ -6,7 +6,7 @@ declare let L: any;
 class Routing extends MapLayer {
   createLeafletElement(props: any) {
 
-    const { from, to, map, infoRounte }: any = props;
+    const { from, to, map, onInfoRounte }: any = props;
 
     let routeControl = L.Routing.control({
       waypoints: [
@@ -22,15 +22,21 @@ class Routing extends MapLayer {
           }
         ]
       },
-      addWaypoints: false,
-      routeWhileDragging: false,
+      createMarker: function (i: number, waypoint: any, n: number) {
+        const marker = L.marker(from, {
+          icon: L.icon({
+            iconUrl: require('../img/caminhao.svg'),
+            iconSize: [50, 50],
+          })
+        });
+        return marker;
+      },
       show: false,
     }).addTo(map.leafletElement);
 
     routeControl.on('routesfound', (e: any) => {
       const { routes } = e;
-      const { summary } = routes[0];
-      infoRounte(summary);
+      onInfoRounte(routes[0]);
       //alert('Total distance is ' + summary.totalDistance / 1000 + ' km and total time is ' + Math.round(summary.totalTime % 3600 / 60) + ' minutes');
     });
 
