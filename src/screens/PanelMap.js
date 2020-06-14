@@ -8,7 +8,7 @@ const MenuSuperior = lazy(() => import('../components/menu/Menu'));
 const Nav = lazy(() => import('../components/nav/Nav'));
 const Routing = lazy(() => import('../components/map/Routing'));
 const InfoRoute = lazy(() => import('../components/map/InfoRoute'));
-import { getLocation } from "../helpers/utils";
+//import { getLocation } from "../helpers/utils";
 
 import ppd from "../data/ppd.json"; // pontos de parada e descanço
 
@@ -23,7 +23,7 @@ const PanelMap = () => {
 
     const [map, setMap] = useState(null);
     const [from, setFrom] = useState(null);
-    const [to, setTo] = useState([-22.716229, -43.716657]);
+    const [to/*, setTo*/] = useState([-22.716229, -43.716657]);
     const [infoRounte, setInfoRounte] = useState(null);
 
     // getLocation().then(position => {
