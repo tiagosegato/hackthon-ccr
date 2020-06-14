@@ -22,6 +22,7 @@ export default function SimpleBottomNavigation(props: any) {
   const { onOearestCabin } = props;
   const classes = useStyles();
   const [value, setValue] = useState(0);
+  const [agenda, setAgenda] = useState('');
   const [isOpen, setIsOpen] = useState(false);
 
   const showModalCancel = () => {
@@ -61,13 +62,22 @@ export default function SimpleBottomNavigation(props: any) {
             icon={<NearMeOutlinedIcon fontSize={'large'} />}
             onClick={onOearestCabin}
           />
+        {!agenda ? (
           <BottomNavigationAction
             type="button"
             onClick={showModalCancel}
             className="btn-blue"
             label="Agendar Consulta"
             icon={<CalendarTodayIcon fontSize={'large'} />}
-          />
+          />):null}
+          {agenda ? (
+          <BottomNavigationAction
+            type="button"
+            onClick={showModalCancel}
+            className="btn-blue"
+            label="Cancelar Consulta"
+            icon={<CalendarTodayIcon fontSize={'large'} />}
+          />):null}
           <BottomNavigationAction
             className="btn-blue"
             label="Destravar Cabine"
