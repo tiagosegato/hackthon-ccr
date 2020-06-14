@@ -67,7 +67,7 @@ export default function SimpleBottomNavigation(props: any) {
         lg="12"
         style={{ marginBottom: "20px" }}
       >
-        <span className="text-name">BINO DA SILVA</span>
+        <span className="text-name"><b>BINO DA SILVA</b></span>
       </Col>
       <Col xs="12" md="12" lg="12">
         <BottomNavigation
