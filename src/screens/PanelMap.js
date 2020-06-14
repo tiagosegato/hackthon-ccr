@@ -33,7 +33,7 @@ const PanelMap = () => {
   useEffect(() => {
     if (map) {
       // zoom para um local
-      map.flyTo(myLocation, 8);
+      map.flyTo(myLocation, 9);
 
       // pega minha localização pelo "leaflet"
       // map.locate({ setView: true, maxZoom: 16 });
@@ -77,6 +77,8 @@ const PanelMap = () => {
 
         {gettingRouting && <LoaderSmall text="Calculando rota..." />}
 
+        {infoRounte && <InfoRoute infoRounte={infoRounte} />}
+
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -118,8 +120,6 @@ const PanelMap = () => {
         ))}
 
         <ScheduleModal show={isOpenAgenda} onHide={hideModalAgenda} />
-
-        {infoRounte && <InfoRoute infoRounte={infoRounte} />}
 
         {map && from && (
           <Routing
