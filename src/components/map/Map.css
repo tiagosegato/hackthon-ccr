@@ -3,15 +3,16 @@
     width: 100%;
     height: 50px;
     z-index: 1000;
-    top: 69px;
+    top: 55px;
 }
 
 .infosRoute .content{
-    background: #ffffff;
+    background: #007BBF;
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
-    font-size: 13px
+    font-size: 15px;
+    color: white;
 }
 
 .titleMaps{

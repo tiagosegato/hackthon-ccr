@@ -33,8 +33,13 @@ class Routing extends MapLayer {
         });
         return marker;
       },
+      fitSelectedRoutes: false,
       show: false,
     }).addTo(map);
+
+    // zoom na rota
+    const bounds = L.latLngBounds(from, to);
+    map.flyToBounds(bounds);
 
     routeControl.on('routesfound', (e: any) => {
       const { routes } = e;
