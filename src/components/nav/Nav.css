@@ -41,3 +41,8 @@
   .MuiBottomNavigationAction-label.Mui-selected {
     font-size: 13px !important;
 }
+
+.horario{
+    border-bottom: solid;
+    border-width: 0.1px;
+}
