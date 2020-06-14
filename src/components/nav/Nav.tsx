@@ -32,6 +32,8 @@ export default function SimpleBottomNavigation(props: any) {
   const [isOpenAgenda, setIsOpenAgenda] = useState(false);
   const [isOpenDesbloqueio, setIsOpenDesbloqueio] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const [alertTitle, setAlertTitle] = useState('');
+  const [alertText, setAlertText] = useState('');
 
   const showModalAgenda = () => {
     setIsOpenAgenda(true);
@@ -57,8 +59,17 @@ export default function SimpleBottomNavigation(props: any) {
     setIsOpen(false);
   };
 
+  const handleSchedule = () => {
+    setIsOpenAgenda(false);
+    setAlertTitle('Agenda de consulta');
+    setAlertText('Agendado com sucesso');
+    setShowAlert(true);
+  }
+
   const handleUnlockCabin = () => {
     setIsOpenDesbloqueio(false);
+    setAlertTitle('Cabine');
+    setAlertText('Destravada com sucesso');
     setShowAlert(true);
   }
 
@@ -127,8 +138,8 @@ export default function SimpleBottomNavigation(props: any) {
 
       <AlertModal
         show={showAlert}
-        title={"Agenda de consulta"}
-        text={"Agendado com sucesso!"}
+        title={alertTitle}
+        text={alertText}
         onHide={onHideAlertModal}
       />
 
@@ -191,7 +202,7 @@ export default function SimpleBottomNavigation(props: any) {
           </Col>
         </Modal.Body>
         <Modal.Footer>
-          <button className="btn btn-primary">Agendar</button>
+          <button className="btn btn-primary" onClick={handleSchedule}>Agendar</button>
           <button className="btn btn-danger" onClick={hideModalAgenda}>
             Cancelar
           </button>
