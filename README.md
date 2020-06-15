@@ -31,6 +31,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## App
 
-![Tela principal](/src/img/tela-principal.jpeg?raw=true "Tela principal")
+![Logo](/src/img/logo.jpeg?w=512 "Logo")
 
-![Logo](/src/img/logo.jpeg?raw=true "Logo")
+![Tela principal](/src/img/tela-principal.jpeg?w=512 "Tela principal")
