@@ -33,4 +33,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ![Logo](/src/img/logo.jpeg?w=256 "Logo")
 
+<img src="/src/img/logo.jpeg" width="100" height="100"/>
+
 ![Tela principal](/src/img/tela-principal.jpeg?w=256 "Tela principal")
