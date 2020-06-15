@@ -31,7 +31,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## App
 
-![Logo](/src/img/logo.jpeg?w=256 "Logo")
+![Logo](/src/img/logo.jpeg?w=256 | width=512 "Logo")
 
 <img src="/src/img/logo.jpeg" width="100" height="100"/>
 
